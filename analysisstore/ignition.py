@@ -53,7 +53,7 @@ def start_server(config=None):
             "--timezone", dest="timezone", type=str, help="Local timezone"
         )
         parser.add_argument(
-            "--service-port",
+            "--service_port",
             dest="service_port",
             type=int,
             help="port listen to for clients",
