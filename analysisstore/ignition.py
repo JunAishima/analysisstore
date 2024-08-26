@@ -47,7 +47,7 @@ def start_server(config=None):
             "--database", dest="database", type=str, help="name of database to use"
         )
         parser.add_argument(
-            "--mongo-uri", dest="mongo_uri", type=str, help="uri of Mongo DB"
+            "--mongo_uri", dest="mongo_uri", type=str, help="uri of Mongo DB"
         )
         parser.add_argument(
             "--timezone", dest="timezone", type=str, help="Local timezone"
