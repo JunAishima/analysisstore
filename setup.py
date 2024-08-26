@@ -54,7 +54,8 @@ setup(
     license="BSD (3-clause)",
     url="https://github.com/NSLS-II/analysisstore.git",
     python_requires=">={}".format(".".join(str(n) for n in min_version)),
-    packages={'analysisstore': ['schemas/*.json']},
+    packages=find_packages(),
+    package_data={'analysisstore': ['schemas/*.json']},
     classifiers=[
         "License :: OSI Approved :: BSD License",
         "Development Status :: 3 - Alpha",
