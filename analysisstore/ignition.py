@@ -35,11 +35,13 @@ def start_server(config=None):
                 for k, v in load_configuration(
                     "analysisstore",
                     "ASST",
-                    ["mongo_uri", "timezone", "database", "service_port"]
+                    ["mongo_uri", "timezone", "database", "service_port"],
+                    allow_missing=True,
                 ).items()
                 if v is not None
             }
-        except (KeyError, TypeError):
+        except (KeyError, TypeError) as e:
+            print(f"KeyError or TypeError while parsing config - {e}")
             config = {}  # if format is wrong or does not exist, return empty dict
         parser = argparse.ArgumentParser()
         parser.add_argument(
