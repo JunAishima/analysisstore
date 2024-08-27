@@ -35,8 +35,7 @@ def start_server(config=None):
                 for k, v in load_configuration(
                     "analysisstore",
                     "ASST",
-                    ["mongo_uri", "timezone", "database", "service_port"],
-                    allow_missing=True,
+                    ["mongo_uri", "timezone", "database", "service_port"]
                 ).items()
                 if v is not None
             }
