@@ -14,8 +14,8 @@ class AnalysisClient:
     def __init__(self, config):
         self.host = config['host']
         self.port = config.get('port')
-        self.use_ssl = config.get('use_ssl')
-        if self.port is None and self.use_ssl in (None, False):
+        self.use_ssl = config.get('use_ssl', False)
+        if self.port is None and not self.use_ssl:
             raise KeyError("at least one of port or use_ssl must be defined")
         self._insert_dict = {'analysis_header': self.insert_analysis_header,
                              'analysis_tail': self.insert_analysis_tail,

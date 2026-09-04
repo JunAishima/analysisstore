@@ -27,12 +27,12 @@ def test_urls(astore_client):
 
 
 def test_ssl(astore_client_ssl):
-    base_test_url = f"https://{testing_config['host']}/"
-    astore_client_ssl._host_url == base_test_url
-    astore_client_ssl.aheader_url == base_test_url + "analysis_header"
-    astore_client_ssl.atail_url == base_test_url + "analysis_tail"
-    astore_client_ssl.dref_url == base_test_url + "data_reference"
-    astore_client_ssl.dref_header_url == base_test_url + "data_reference_header"
+    base_test_url = f"https://{astore_client_ssl.host}/"
+    assert astore_client_ssl._host_url == base_test_url
+    assert astore_client_ssl.aheader_url == base_test_url + "analysis_header"
+    assert astore_client_ssl.atail_url == base_test_url + "analysis_tail"
+    assert astore_client_ssl.dref_url == base_test_url + "data_reference"
+    assert astore_client_ssl.dref_header_url == base_test_url + "data_reference_header"
 
 
 def test_doc_or_uid_to_uid(astore_server, astore_client):

@@ -52,7 +52,10 @@ def astore_client():
 @pytest.fixture(scope="function")
 def astore_client_ssl():
     c = AnalysisClient(
-        {"host": testing_config["mongo_host"], "use_ssl": testing_config["use_ssl"],
-         "port": testing_config["port"]}
+        {
+            "host": testing_config["host"],
+            "use_ssl": testing_config["use_ssl"],
+            "port": testing_config["port"],
+        }
     )
     return c
